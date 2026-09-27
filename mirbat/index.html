@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>مِربَط · منصة المقيض</title>
+<meta name="description" content="مِربَط MAQIDH — المنصة الرقمية المتكاملة لإدارة إقامة الطيور وصحتها وعملياتها ومالياتها">
+<link rel="icon" type="image/png" href="assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Reem+Kufi:wght@600;700&display=swap">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.3/dist/index.global.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lucide@0.577.0/dist/umd/lucide.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
+
+<!-- Thème Tailwind : couleurs extraites de la présentation Mirbat -->
+<style type="text/tailwindcss">
+  @theme {
+    --font-sans: "Tajawal", "Segoe UI", Tahoma, system-ui, sans-serif;
+    --font-brand: "Reem Kufi", "Tajawal", system-ui, sans-serif;
+
+    --color-navy-900: #0E1B33;
+    --color-navy: #17294A;
+    --color-navy-700: #223A63;
+    --color-navy-500: #5B6B82;
+    --color-navy-50: #E8ECF2;
+    --color-gold: #D6B26B;
+    --color-gold-700: #8E6C2B;
+    --color-gold-600: #B08A3E;
+    --color-gold-100: #F6EEDC;
+    --color-gold-50: #FBF8F1;
+    --color-paper: #F3F5F9;
+    --color-line: #DCE1EA;
+    --color-ink: #1F2937;
+    --color-mute: #6B7280;
+    --color-ok: #2A6B4F;
+    --color-ok-100: #E6F0EA;
+    --color-bad: #A6472E;
+    --color-bad-100: #FBF1EE;
+    --color-sky: #6E93C4;
+  }
+
+  @layer components {
+    .btn { @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-bold transition select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50; }
+    .btn-primary { @apply bg-navy text-white hover:bg-navy-700; }
+    .btn-gold { @apply bg-gold text-navy hover:bg-gold-600 hover:text-white; }
+    .btn-ghost { @apply bg-white text-navy ring-1 ring-line hover:bg-paper; }
+    .btn-danger { @apply bg-bad text-white hover:brightness-110; }
+    .btn-sm { @apply rounded-lg px-3 py-1.5 text-xs; }
+    .btn-icon { @apply inline-grid size-9 place-items-center rounded-lg text-navy-500 transition hover:bg-paper hover:text-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold disabled:opacity-30 disabled:hover:bg-transparent; }
+    .input { @apply w-full rounded-xl border border-line bg-white px-3.5 py-2.5 text-sm text-ink placeholder:text-mute/70 transition focus:border-gold focus:outline-none focus:ring-4 focus:ring-gold/20; }
+    .card { @apply rounded-2xl border border-line bg-white; }
+    .card-h { @apply flex flex-wrap items-center justify-between gap-3 border-b border-line px-5 py-4; }
+    .card-t { @apply flex items-center gap-2 text-base font-extrabold text-navy; }
+    .chip { @apply inline-flex cursor-pointer items-center gap-1.5 rounded-full bg-white px-3 py-1.5 text-xs font-bold text-navy-500 ring-1 ring-line transition hover:ring-gold; }
+    .chip[aria-pressed="true"] { @apply bg-navy text-white ring-navy; }
+    .nav-link { @apply flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-white/70 transition hover:bg-white/5 hover:text-white; }
+    .nav-link[aria-current="page"] { @apply bg-gold/15 font-bold text-gold; }
+    .tab { @apply border-b-2 border-transparent px-1 pb-2.5 text-sm font-bold text-mute transition hover:text-navy; }
+    .tab[aria-selected="true"] { @apply border-gold text-navy; }
+    .dl-row { @apply flex items-baseline justify-between gap-4 border-b border-dashed border-line py-2 text-sm last:border-0; }
+  }
+</style>
+<link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body class="h-full bg-paper font-sans text-ink antialiased">
+
+  <div id="app" class="min-h-full"></div>
+  <div id="modal-root"></div>
+  <div id="toasts" class="pointer-events-none fixed inset-x-0 bottom-4 z-50 mx-auto flex w-full max-w-sm flex-col gap-2 px-4" aria-live="polite"></div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/ui.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
